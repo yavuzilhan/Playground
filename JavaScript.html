@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>yavuzilhan.com | JavaScript Lesson 1</title>
+</head>
+
+<body>
+    <p id="result"></p>
+    <button type="button" onclick="Add();">Add</button>
+
+    <script>
+        var langs = ["JavaScript", "jQuery", "AngularJS", "NodeJS", "React", "Python", ];
+
+        function Add() {
+            langs.push("Bootstrap4");
+            document.getElementById("result").innerHTML = langs;
+        }
+        document.getElementById("result").innerHTML = langs.join(" | ");
+    </script>
+
+    <!--Browserdan JavaScript ayarları kapalı ise bu alan görüntülenir.-->
+    <noscript>JavaScript ayarlarınızı gözden geçirip script iznini açmanız gerekir</noscript>
+
+</body>
+
+</html>
