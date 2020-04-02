@@ -4,5 +4,11 @@ git add -A
 ** Yapılan değişikliklerin geçerli kılınması
 git commit -m "Mesaj"
 
-** Locak'deki değişikliklerin sunucuya gönderilmesi
+** Local'deki değişikliklerin sunucuya gönderilmesi
 git push
+
+** Sunucu ile Local arasındaki farkların kontrolü
+git fetch
+
+** Sunucudaki değişiklikleri Local'e çekmek için
+git pull
