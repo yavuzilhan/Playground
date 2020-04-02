@@ -1,0 +1,8 @@
+** Eklenen yeni dosyaları branch'e eklemek
+git add -A 
+
+** Yapılan değişikliklerin geçerli kılınması
+git commit -m "Mesaj"
+
+** Locak'deki değişikliklerin sunucuya gönderilmesi
+git push
