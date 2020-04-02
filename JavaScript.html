@@ -8,16 +8,43 @@
 
 <body>
     <p id="result"></p>
-    <button type="button" onclick="Add();">Add</button>
+    <button type="button" onclick="Show();">Sonuç</button>
 
     <script>
-        var langs = ["JavaScript", "jQuery", "AngularJS", "NodeJS", "React", "Python", ];
+        function Show() {
+            var day;
+            var d = new Date().getDay();
 
-        function Add() {
-            langs.push("Bootstrap4");
-            document.getElementById("result").innerHTML = langs;
+            switch (d) {
+                case 0:
+                    day = "Pazar";
+                    break;
+                case 1:
+                    day = "Pazartesi";
+                    break;
+                case 2:
+                    day = "Salı";
+                    break;
+                case 3:
+                    day = "Çarşamba";
+                    break;
+                case 4:
+                    day = "Perşembe";
+                    break;
+                case 5:
+                    day = "Cuma";
+                    break;
+                case 6:
+                    day = "Cumartesi";
+                    break;
+                default:
+                    day = "Böyle bir gün yok"
+                    break;
+            }
+
+            document.getElementById("result").innerHTML = day;
+
         }
-        document.getElementById("result").innerHTML = langs.join(" | ");
     </script>
 
     <!--Browserdan JavaScript ayarları kapalı ise bu alan görüntülenir.-->
