@@ -5,51 +5,60 @@
     <meta charset="utf-8">
     <title>yavuzilhan.com | JavaScript Lesson 1</title>
 </head>
+<style>
+    body {
+        color:white;
+        background-color: teal;
+    }
+    #game {
+        width: 400px;
+        background-color: gray;
+        padding: 20px;
+        text-align: center;
+        margin: auto;
+    }
+    h1 {
+        margin: 0 0 10px 0;
+        border: solid 1px #FFFFFF;
+        padding: 5px;
+        font-weight: 400;
+    }
+    span {
+        font-size: 125%;
+        padding: 12px;
+    }
+    #result {
+        width: 90px;
+    }
+    #True, #False {
+        font-size: 150%;
+        margin-top: 10px;
+        display: inline-block;
+        padding: 10px;
+    }
+    #True {
+        background-color: green;
+    }
+    #False {
+        background-color: red;
+    }
+</style>
 
 <body>
-    <p id="result"></p>
-    <button type="button" onclick="Show();">Sonuç</button>
+    <div id="game">
+        <h1>Dört İşlem Oyunu</h1>
+        <span id="Number1">0</span>
+        <span id="Operator">*</span>
+        <span id="Number2">0</span>
+        <span>=</span>
+        <input type="text" id="result">
+        <input type="button" id="answer" value="Cevapla">
+        <div style="clear: both;"></div>
+        <div id="True">0</div>
+        <div id="False">0</div>
+        <div style="clear: both;"></div>
 
-    <script>
-        function Show() {
-            var day;
-            var d = new Date().getDay();
-
-            switch (d) {
-                case 0:
-                    day = "Pazar";
-                    break;
-                case 1:
-                    day = "Pazartesi";
-                    break;
-                case 2:
-                    day = "Salı";
-                    break;
-                case 3:
-                    day = "Çarşamba";
-                    break;
-                case 4:
-                    day = "Perşembe";
-                    break;
-                case 5:
-                    day = "Cuma";
-                    break;
-                case 6:
-                    day = "Cumartesi";
-                    break;
-                default:
-                    day = "Böyle bir gün yok"
-                    break;
-            }
-
-            document.getElementById("result").innerHTML = day;
-
-        }
-    </script>
-
-    <!--Browserdan JavaScript ayarları kapalı ise bu alan görüntülenir.-->
-    <noscript>JavaScript ayarlarınızı gözden geçirip script iznini açmanız gerekir</noscript>
-
+    </div>
 </body>
 
 </html>

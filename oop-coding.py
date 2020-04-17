@@ -1,21 +1,21 @@
-class Hayvan: 
-    ses=""
-    renk=""
-    yas=0
-    def sesCikar(self):
-        print(self.ses)
+class Insan:
+    def __init__(self,isim):
+        self.isim = isim
+    def isimAl(self):
+        return self.isim
+    def ogrenciMi(self):
+        return False
 
-Zurafa = Hayvan()
-Zurafa.yas=45
-Zurafa.ses="Python"
-Zurafa.renk="Turuncu"
+class Ogrenci(Insan):
+    def ogrenciMi(self):
+        return True
 
-BalPorsugu = Hayvan()
-BalPorsugu.ses="Java"
-BalPorsugu.renk="Siyah"
-BalPorsugu.yas=2
+ogrenciJack = Ogrenci("Jack")
 
-Zurafa.sesCikar()
-BalPorsugu.sesCikar()
+insanJohn = Insan("John")
 
+print(issubclass(Insan,Ogrenci))
+print(issubclass(Ogrenci,Insan))
+
+print(isinstance(ogrenciJack,Insan))
 
