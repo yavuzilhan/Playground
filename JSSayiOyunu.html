@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>yavuzilhan.com | JavaScript Lesson 1</title>
+</head>
+<style>
+    body {
+        color:white;
+        background-color: teal;
+    }
+    #game {
+        width: 400px;
+        background-color: gray;
+        padding: 20px;
+        text-align: center;
+        margin: auto;
+    }
+    h1 {
+        margin: 0 0 10px 0;
+        border: solid 1px #FFFFFF;
+        padding: 5px;
+        font-weight: 400;
+    }
+    span {
+        font-size: 125%;
+        padding: 12px;
+    }
+    #result {
+        width: 90px;
+    }
+    #True, #False {
+        font-size: 150%;
+        margin-top: 10px;
+        display: inline-block;
+        padding: 10px;
+    }
+    #True {
+        background-color: green;
+    }
+    #False {
+        background-color: red;
+    }
+</style>
+
+<body>
+    <div id="game">
+        <h1>Dört İşlem Oyunu</h1>
+        <span id="Number1">0</span>
+        <span id="Operator">*</span>
+        <span id="Number2">0</span>
+        <span>=</span>
+        <input type="text" id="result">
+        <input type="button" id="answer" value="Cevapla">
+        <div style="clear: both;"></div>
+        <div id="True">0</div>
+        <div id="False">0</div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <script>
+        var Number1, Number2, Operator, result, answer, True=0, False=0;
+        Number1 = document.getElementById("Number1")
+        Number2 = document.getElementById("Number2")
+        Operator = document.getElementById("Operator")
+        result = document.getElementById("result")
+        answer = document.getElementById("answer")
+        True = document.getElementById("True")
+        False = document.getElementById("False")
+
+        function RandomNumber(min,max){
+            var number = Math.floor(Math.random() * (max - min) + min);
+            return number;
+        }
+
+        function NewQuestion(){
+            var operation=["+","-","*","/"];
+            Operator.textContent = operation[RandomNumber(0,4)];
+            Number1.textContent = RandomNumber(0,50);
+            Number2.textContent = RandomNumber(0,50);
+
+            if (Operator.textContent == "/") {
+                while (true) {
+                    Number2.textContent = RandomNumber(0,50);
+                    if (Number1.textContent%Number2.textContent == 0) {
+                        break;
+                    }
+                }
+            }
+        }
+
+        window.onload = function() {
+            NewQuestion();
+        }
+
+        answer.onclick = function() {
+            var ans, n1, n2;
+            n1 = Number(Number1.textContent);
+            n2 = Number(Number2.textContent);
+            switch (Operator.textContent) {
+                case "+":
+                    ans = n1 + n2;
+                    break;
+                case "-":
+                    ans = n1 - n2;
+                    break;
+                case "*":
+                    ans = n1 * n2;
+                    break;
+                case "/":
+                    ans = n1 / n2;
+                    break;
+                default:
+                    break;
+            }
+            if (result.value == ans) {
+                True.textContent = Number(True.textContent) + 1;
+            }
+            else {
+                False.textContent = Number(False.textContent) + 1;
+            }
+
+            NewQuestion();
+        }
+    </script>
+</body>
+
+</html>
