@@ -12,11 +12,25 @@
 
     <script>
         "use strict";
-        var jsYukle = document.getElementById("jsYukle");
-        jsYukle.onclick = function () {
-            var element = document.createElement("script");
-            element.src = "js/message.js";
-            document.body.appendChild(element);
+        //Harici bir JS dosyası yükleme örneği
+        var btn = document.getElementById("jsYukle");
+        btn.onclick = function () {
+            var newElement = document.createElement("script");
+            newElement.src = "js/message.js";
+            document.body.appendChild(newElement);
+        }
+        //JSON Nesnesi oluşturalım
+        var jSonNesnesi = '{"langs":[{"FirstName":"Yavuz","LastName":"İlhan"},' +
+            '{"FirstName":"Nigar","LastName":"İlhan"},' +
+            '{"FirstName":"Doğu","LastName":"İlhan"}]}';
+        //JSON Nesnesini normal bir JS nesnesine dönüştürelim
+        var liste = JSON.parse(jSonNesnesi);
+        //JSON dan gelen veriyi kullanalım
+        window.onload = function () {
+            var result = document.getElementById("result");
+            for (let i = 0; i < liste.langs.length; i++) {
+                result.innerHTML += liste.langs[i].FirstName + " " + liste.langs[i].LastName + "<br>";
+            }
         }
     </script>
 </body>
