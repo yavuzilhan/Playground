@@ -1,0 +1,23 @@
+Visual Studio Code
+    Live Sass Compiler
+    Live Server
+    CSS Peek (CSS lerin üstüne geldiğinde içeriğini gösterir ve Jump seçeneği sunar)
+    Prettier (Kod Formatlama - Format On Save ayarını Settings den açabilirsin)
+    Bracket Pair Colorizer 2 (İçinde bulunduğun Scope u renklendirir - Gereksiz)
+    Auto Rename Tag (Tag değiştirirken kapanışı otomatik değiştirir)
+
+    REST Client (Rest API testleri için)
+    Emmet (Otomatik olarak tag vs. yaratmak için güzel bir snippet tool)
+    HTML CSS Support (HTML içinde .css-adı yazıp TAB a basınca ilgili class ile div açar)
+    Material Theme (VS Code Tema Eklentisi)
+    Material Icon Theme (VS Code Tema Icon Seti)
+
+Node.js
+    npm i bootstrap@5.0.0-aplha1
+    npm i bootstrap-icons
+    npm i popper.js
+
+Bootstrap
+https://www.youtube.com/watch?v=I7CfaDYzTVM
+
+
